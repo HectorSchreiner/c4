@@ -1,0 +1,25 @@
+[package]
+name = "c4_desktop" 
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+license = ""
+repository = ""
+default-run = "c4_desktop"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta.XX", features = [] } 
+
+[dependencies]
+serde_json = "1.0.121" 
+serde = { version = "1.0.219", features = ["derive"] } 
+tokio = { version = "1.46.1", features = ["rt-multi-thread"] } 
+
+tauri = { version = "2.0.0-beta.XX", features = [] } 
+
+c4_backend = { path = "../backend" } 
+
+[features]
+custom-protocol = [ "tauri/custom-protocol" ]
